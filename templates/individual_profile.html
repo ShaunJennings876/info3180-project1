@@ -1,0 +1,41 @@
+{%extends "mainlayout.html"%}
+{%block content%}
+
+  <div class="flex-container">
+
+    <div class="profile-container">
+
+      <!--First Row-->
+      <div class="flex-row">
+        <!--Profile Picture-->
+        <div class="image">
+          <img src="../static/{{user.profile_picture}}" alt="Profile picture" class = "profile-picture">
+        </div>
+        <!--Profile Info-->
+        <div class="content-holder profile-info">
+          <h2>{{user.firstname}} {{user.lastname}}</h2>
+          <div class = 'icon-row'><img src="../static/email.png" alt="email icon" class = "profile-icons margin-right-5px"> <h5>{{user.email}}</h5></div>
+          <div class = 'icon-row'><img src="../static/location.png" alt="location icon" class = "profile-icons margin-right-5px"> <h5>{{user.location}}</h5></div>
+          <div class = 'icon-row'><img src="../static/calendar.jpg" alt="calendar icon" class = "profile-icons margin-right-5px"> <h5>Joined on {{user.created_on}}</h5></div>
+        </div>
+
+      </div>
+
+      <!--Second Row-->
+      <div class="biography">
+        <h3>About Me</h3>
+        <p>{{user.biography}}</p>
+
+      </div>
+
+      <!--Third Row-->
+      <div class="flex-row flex-center space-between">
+        <input type="button" class = "btn btn-success" name="" value="Send Message">
+        <input type="button" class = "btn btn-primary" name="" value="Follow">
+      </div>
+
+    </div>
+
+  </div>
+
+{%endblock content%}

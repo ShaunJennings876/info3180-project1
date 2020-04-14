@@ -1,0 +1,50 @@
+{%extends "mainlayout.html"%}
+{%block content%}
+
+
+    <div class="flex-container main-container">
+
+      <div class = "content-holder width-100">
+
+        <div class="flex-container">
+          <div class="header">
+            <h1>Profiles</h1>
+          </div>
+        </div>
+
+        <!--Profiles Layout-->
+        <!--This will need to be repeated in a for loop-->
+
+        <div class="flex-container">
+          <div class="profilesholder">
+            {%for user in users%}
+
+            <!--Profile template-->
+            <div class="profile-template">
+
+              <img src="../static/{{user.profile_picture}}" alt="Profile Picture" class = "profile-picture">
+
+              <!--Profile Info-->
+              <div class="content-holder margin-left-15px">
+                <h4>{{user.firstname}} {{user.lastname}}</h4>
+                <div class = 'icon-row'><img src="../static/gender.jpg" alt="gender icon" class = "profile-icons margin-right-5px"> <h5>{{user.gender}}</h5></div>
+                <div class = 'icon-row'><img src="../static/location.png" alt="location icon" class = "profile-icons margin-right-5px"> <h5>{{user.location}}</h5></div>
+              </div>
+
+              <!--View profile Button-->
+              <div class="flex-container align-items-center buttonbox">
+                  <input type="button" onclick="window.location.href = '/profile/{{user.id}}';" class = "btn btn-success" name="{{user.id}}" value="View Profile">
+              </div>
+
+            </div>
+
+            {%endfor%}
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+{%endblock content%}

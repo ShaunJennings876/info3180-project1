@@ -1,0 +1,46 @@
+{%extends "mainlayout.html"%}
+{%block content%}
+
+  <div class = "flex-container main-container">
+
+    <div class = "content-holder width-100">
+
+      <!--Heading-->
+      <div class="flex-container">
+        <div class="header">
+          <h1>Add Profile</h1>
+        </div>
+      </div>
+
+
+      <!--Form-->
+      <div class="flex-container">
+        <div class="form-container">
+          <div class = "profile-form">
+            <form action ='' method = "POST" enctype= "multipart/form-data">
+              {{ form.hidden_tag() }}
+              {{form.firstname.label(class = "form-control-label")}}
+              {{form.firstname(class = "form-control")}}
+              {{form.lastname.label(class = "form-control-label")}}
+              {{form.lastname(class = "form-control")}}
+              {{form.gender.label(class = "form-control-label")}}
+              {{form.gender(class = "form-control")}}
+              {{form.email.label(class = "form-control-label")}}
+              {{form.email(class = "form-control")}}
+              {{form.location.label(class = "form-control-label")}}
+              {{form.location(class = "form-control")}}
+              {{form.biography.label(class = "form-control-label")}}
+              {{form.biography(class = "form-control")}}
+              {{form.profilepicture.label(class = "form-control-label")}}
+              {{form.profilepicture}}
+              {{form.submit(class = "btn btn-success")}}
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+{%endblock content%}
